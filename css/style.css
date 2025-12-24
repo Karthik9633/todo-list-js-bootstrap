@@ -9,7 +9,6 @@ body {
     background: linear-gradient(135deg, #eef2f7, #e5ebf1);
     min-height: 100vh;
 }
-
 .navbar {
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
