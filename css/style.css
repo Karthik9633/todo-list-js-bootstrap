@@ -112,3 +112,9 @@ button {
     font-weight: 700;
     margin-bottom: 6px;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
