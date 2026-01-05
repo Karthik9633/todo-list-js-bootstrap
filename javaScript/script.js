@@ -46,17 +46,30 @@ addTaskBtn.addEventListener("click", function () {
     deleteBtn.className = "btn btn-danger btn-sm px-3 py-1"
 
     checkbox.addEventListener("change", function () {
-        taskText.classList.toggle("completed")
-        updateStats()
-    });
-    editBtn.addEventListener("click", function () {
-        taskText.style.display = "none"
-        editInput.style.display = "block"
+    taskText.classList.toggle("completed");
 
-        editBtn.classList.add("d-none")
-        saveBtn.classList.remove("d-none")
-        cancelBtn.classList.remove("d-none")
-    });
+    if (checkbox.checked) {
+        editBtn.disabled = true;
+        editBtn.classList.add("disabled");
+    } else {
+        editBtn.disabled = false;
+        editBtn.classList.remove("disabled");
+    }
+
+    updateStats();
+});
+
+   editBtn.addEventListener("click", function () {
+    if (checkbox.checked) return;
+
+    taskText.style.display = "none";
+    editInput.style.display = "block";
+
+    editBtn.classList.add("d-none");
+    saveBtn.classList.remove("d-none");
+    cancelBtn.classList.remove("d-none");
+});
+
 
     saveBtn.addEventListener("click", function () {
         if (editInput.value.trim() === "") {
